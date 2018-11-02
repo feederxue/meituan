@@ -14,6 +14,14 @@
     @include box-flex;
     @include direction(column);
     overflow: hidden;
+    .up {
+        text-align: center;
+        margin-top: pxTorem(-20px);
+    }
+    .down {
+        text-align: center;
+        margin-bottom: pxTorem(-20px);
+    }
 }
 
 header {
@@ -52,45 +60,134 @@ header {
     }
 }
 
-footer {
-    @include wh(100%, pxTorem(150px));
+section {
+    @include wh(100%, 100%);
     @include box-flex;
     @include direction(column);
-    @include align;
-    background: #F0EFED;
-    flex-shrink: 0;
-    .f1 {
-        @include wh(90%, pxTorem(50px));
+    overflow-y: auto;
+    .h1 {
+        @include wh(100%, pxTorem(10px));
+        background: #eee;
+        flex-shrink: 0;
+    }
+    .img {
+        flex-shrink: 0;
+        img {
+            @include wh(100%, pxTorem(120px));
+        }
+    }
+    .boss {
+        @include wh(100%, pxTorem(160px));
+        padding: 0 pxTorem(10px);
+        flex-shrink: 0;
+        @include sizing;
+        .swiper-slide {
+            @include wh(100%, 100%);
+            @include box-flex;
+            @include flexWrap(wrap);
+            @include align;
+            @include justify(space-between);
+            dl {
+                width: 20%;
+                text-align: center;
+            }
+        }
+        .swiper-pagination {
+            padding-top: pxTorem(10px);
+        }
+        .swiper-pagination-bullet {
+            @include wh(pxTorem(6px), pxTorem(6px));
+        }
+    }
+    .content {
+        @include wh(100%, 100%);
+        padding: 0 pxTorem(10px);
+        @include sizing;
+        .txt {
+            @include wh(100%, pxTorem(40px));
+            line-height: pxTorem(40px);
+            font-size: pxTorem(16px);
+            @include setBottomLine;
+            flex-shrink: 0;
+        }
+        .con {
+            @include wh(100%, auto);
+            @include box-flex;
+            @include direction(column);
+            dl {
+                @include wh(100%, pxTorem(100px));
+                @include box-flex;
+                @include setBottomLine;
+                @include align;
+                // @include justify;
+                dd {
+                    padding: pxTorem(10px);
+                    img {
+                        @include wh(pxTprem(70px), pxTorem(70px));
+                    }
+                }
+                dt {
+                    width: 80%;
+                    color: #333333;
+                    .base {
+                        width: 100%;
+                        @include box-flex;
+                        @include justify(space-between);
+                        p:nth-child(1) {
+                            margin-top: pxTorem(30px);
+                        }
+                        p:nth-child(2) {
+                            margin-top: pxTorem(20px);
+                        }
+                        .price {
+                            color: #02D7CA;
+                            font-size: pxTorem(16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        @include wh(100%, pxTorem(150px));
         @include box-flex;
+        @include direction(column);
         @include align;
-        @include justify(space-between);
-        span {
-            padding: pxTorem(5px) pxTorem(10px);
-            border: 1px solid #06C1AE;
-            color: #06C1AE;
-            margin: 0 pxTorem(5px);
+        background: #F0EFED;
+        flex-shrink: 0;
+        .f1 {
+            @include wh(90%, pxTorem(50px));
+            @include box-flex;
+            @include align;
+            @include justify(space-between);
+            span {
+                padding: pxTorem(5px) pxTorem(10px);
+                border: 1px solid #06C1AE;
+                color: #06C1AE;
+                margin: 0 pxTorem(5px);
+            }
         }
-    }
-    .f2 {
-        @include wh(80%, pxTorem(40px));
-        @include box-flex;
-        @include align;
-        @include justify(space-around);
-        text-align: center;
-        span {
-            color: #06C1AE;
-            border-right: 1px solid #000;
-            padding-right: pxTorem(10px);
+        .f2 {
+            @include wh(80%, pxTorem(40px));
+            @include box-flex;
+            @include align;
+            @include justify(space-around);
+            text-align: center;
+            span {
+                color: #06C1AE;
+                border-right: 1px solid #000;
+                padding-right: pxTorem(10px);
+            }
         }
-    }
-    .f3 {
-        @include wh(70%, auto);
-        a {
-            color: #06C1AE;
-            padding: 0 pxTorem(5px);
+        .f3 {
+            @include wh(70%, auto);
+            a {
+                color: #06C1AE;
+                padding: 0 pxTorem(5px);
+            }
         }
-    }
-    p {
-        color: #ccc;
+        p {
+            color: #ccc;
+        }
     }
 }

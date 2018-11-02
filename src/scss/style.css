@@ -199,6 +199,16 @@ html {
   overflow: hidden;
 }
 
+.wrap .up {
+  text-align: center;
+  margin-top: -0.53333rem;
+}
+
+.wrap .down {
+  text-align: center;
+  margin-bottom: -0.53333rem;
+}
+
 header {
   width: 100%;
   height: 1.17333rem;
@@ -258,7 +268,192 @@ header p:nth-child(3) {
   text-align: center;
 }
 
-footer {
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+section .h1 {
+  width: 100%;
+  height: 0.26667rem;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+section .img {
+  flex-shrink: 0;
+}
+
+section .img img {
+  width: 100%;
+  height: 3.2rem;
+}
+
+section .boss {
+  width: 100%;
+  height: 4.26667rem;
+  padding: 0 0.26667rem;
+  flex-shrink: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section .boss .swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+section .boss .swiper-slide dl {
+  width: 20%;
+  text-align: center;
+}
+
+section .boss .swiper-pagination {
+  padding-top: 0.26667rem;
+}
+
+section .boss .swiper-pagination-bullet {
+  width: 0.16rem;
+  height: 0.16rem;
+}
+
+section .content {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.26667rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section .content .txt {
+  width: 100%;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
+  font-size: 0.42667rem;
+  flex-shrink: 0;
+}
+
+section .content .txt {
+  position: relative;
+}
+
+section .content .txt:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+[data-dpr="1"] section .content .txt:before {
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+section .content .con {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+section .content .con dl {
+  width: 100%;
+  height: 2.66667rem;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+section .content .con dl {
+  position: relative;
+}
+
+section .content .con dl:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+[data-dpr="1"] section .content .con dl:before {
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+section .content .con dl dd {
+  padding: 0.26667rem;
+}
+
+section .content .con dl dd img {
+  width: pxTprem(70px);
+  height: 1.86667rem;
+}
+
+section .content .con dl dt {
+  width: 80%;
+  color: #333333;
+}
+
+section .content .con dl dt .base {
+  width: 100%;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+section .content .con dl dt .base p:nth-child(1) {
+  margin-top: 0.8rem;
+}
+
+section .content .con dl dt .base p:nth-child(2) {
+  margin-top: 0.53333rem;
+}
+
+section .content .con dl dt .base .price {
+  color: #02D7CA;
+  font-size: 0.42667rem;
+}
+
+section footer {
   width: 100%;
   height: 4rem;
   display: flex;
@@ -273,7 +468,7 @@ footer {
   flex-shrink: 0;
 }
 
-footer .f1 {
+section footer .f1 {
   width: 90%;
   height: 1.33333rem;
   display: flex;
@@ -286,14 +481,14 @@ footer .f1 {
   justify-content: space-between;
 }
 
-footer .f1 span {
+section footer .f1 span {
   padding: 0.13333rem 0.26667rem;
   border: 1px solid #06C1AE;
   color: #06C1AE;
   margin: 0 0.13333rem;
 }
 
-footer .f2 {
+section footer .f2 {
   width: 80%;
   height: 1.06667rem;
   display: flex;
@@ -307,22 +502,22 @@ footer .f2 {
   text-align: center;
 }
 
-footer .f2 span {
+section footer .f2 span {
   color: #06C1AE;
   border-right: 1px solid #000;
   padding-right: 0.26667rem;
 }
 
-footer .f3 {
+section footer .f3 {
   width: 70%;
   height: auto;
 }
 
-footer .f3 a {
+section footer .f3 a {
   color: #06C1AE;
   padding: 0 0.13333rem;
 }
 
-footer p {
+section footer p {
   color: #ccc;
 }
