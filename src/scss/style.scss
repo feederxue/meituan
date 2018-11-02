@@ -1,0 +1,96 @@
+@import"common.scss";
+@import"_minix.scss";
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+* {
+    list-style: none;
+}
+
+.wrap {
+    @include wh(100%, 100%);
+    @include box-flex;
+    @include direction(column);
+    overflow: hidden;
+}
+
+header {
+    @include wh(100%, pxTorem(44px));
+    @include box-flex;
+    @include align;
+    @include justify(space-between);
+    padding: 0 pxTorem(10px);
+    @include sizing;
+    flex-shrink: 0;
+    color: #fff;
+    background: #00C3B1;
+    i {
+        font-size: pxTorem(15px)!important;
+    }
+    p:nth-child(2) {
+        width: 60%;
+        height: 70%;
+        background: #00A797;
+        border-radius: pxTorem(5px);
+        @include box-flex;
+        @include align;
+        i {
+            padding: 0 pxTorem(5px);
+        }
+        input {
+            color: #02D7CA;
+            border: 0;
+            outline: 0;
+        }
+    }
+    p:nth-child(3) {
+        @include box-flex;
+        @include direction(column);
+        text-align: center;
+    }
+}
+
+footer {
+    @include wh(100%, pxTorem(150px));
+    @include box-flex;
+    @include direction(column);
+    @include align;
+    background: #F0EFED;
+    flex-shrink: 0;
+    .f1 {
+        @include wh(90%, pxTorem(50px));
+        @include box-flex;
+        @include align;
+        @include justify(space-between);
+        span {
+            padding: pxTorem(5px) pxTorem(10px);
+            border: 1px solid #06C1AE;
+            color: #06C1AE;
+            margin: 0 pxTorem(5px);
+        }
+    }
+    .f2 {
+        @include wh(80%, pxTorem(40px));
+        @include box-flex;
+        @include align;
+        @include justify(space-around);
+        text-align: center;
+        span {
+            color: #06C1AE;
+            border-right: 1px solid #000;
+            padding-right: pxTorem(10px);
+        }
+    }
+    .f3 {
+        @include wh(70%, auto);
+        a {
+            color: #06C1AE;
+            padding: 0 pxTorem(5px);
+        }
+    }
+    p {
+        color: #ccc;
+    }
+}
